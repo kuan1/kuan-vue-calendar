@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <h2>1234124</h2>
+    <h2>vue - 精简版日历</h2>
     <calendar />
   </div>
 </template>
