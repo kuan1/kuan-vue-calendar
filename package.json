@@ -1,0 +1,23 @@
+{
+  "name": "kuan-vue-calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuan1/kuan-vue-calendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuan1/kuan-vue-calendar/issues"
+  },
+  "homepage": "https://github.com/kuan1/kuan-vue-calendar#readme",
+  "devDependencies": {
+    "kuan-pack-vue": "^2.0.7"
+  }
+}
