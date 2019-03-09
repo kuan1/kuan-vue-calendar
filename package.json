@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "cross-env NODE_ENV=development kuan-pack dev",
+    "build": "cross-env NODE_ENV=production node build",
+    "build:lib": "cross-env NODE_ENV=production node buildLib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +21,9 @@
   },
   "homepage": "https://github.com/kuan1/kuan-vue-calendar#readme",
   "devDependencies": {
-    "kuan-pack-vue": "^2.0.7"
+    "cross-env": "^5.2.0",
+    "kuan-pack-vue": "^2.0.7",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
   }
 }
