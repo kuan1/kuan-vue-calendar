@@ -2,7 +2,7 @@
   "name": "kuan-vue-calendar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/kuan-vue-calendar.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development kuan-pack dev",
     "build": "cross-env NODE_ENV=production node build/build",
