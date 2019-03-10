@@ -5,7 +5,7 @@
 (参考 vue-calendar)[https://github.com/jinzhe/vue-calendar]
 
 使用DEMO
-```js
+```vue
 <template>
   <div class="test-container">
     <h2 style="text-align: center">日历选择例子</h2>

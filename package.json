@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development kuan-pack dev",
-    "build": "cross-env NODE_ENV=production node build",
-    "build:lib": "cross-env NODE_ENV=production node buildLib",
+    "build": "cross-env NODE_ENV=production node build/build",
+    "build:lib": "cross-env NODE_ENV=production node build/buildLib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
