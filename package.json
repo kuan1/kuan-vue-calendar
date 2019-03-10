@@ -13,8 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/kuan1/kuan-vue-calendar.git"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "calendar"
+  ],
+  "author": "luzhongk@126.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kuan1/kuan-vue-calendar/issues"
