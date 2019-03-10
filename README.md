@@ -4,6 +4,8 @@
 
 (参考 vue-calendar)[https://github.com/jinzhe/vue-calendar]
 
+(预览地址)[https://kuan1.github.io/kuan-vue-calendar/]
+
 ### 使用DEMO
 ```vue
 <template>
