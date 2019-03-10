@@ -12,7 +12,7 @@
     <hr>
     <calendar range v-model="value3" />
 
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="test">提交</button>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
   width: 375px;
   margin: 50px auto;
 }
-.btn {
+.test-btn {
   padding: 4px 8px;
   display: block;
   margin: 10px auto;
