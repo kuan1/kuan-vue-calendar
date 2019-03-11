@@ -1,6 +1,6 @@
 # kuan-vue-calendar
 
-目的：制作一个简单轻量的日历选择插件，支持分段多选日期
+目的：制作一个简单轻量的日历选择插件，支持单选、多选、区域选择
 
 (参考 vue-calendar)[https://github.com/jinzhe/vue-calendar]
 

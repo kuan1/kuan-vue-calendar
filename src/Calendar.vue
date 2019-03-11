@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Calendar from './lib/calendar.js'
+// import Calendar from './lib/calendar.js'
 
 export default {
   props: {
@@ -63,7 +63,9 @@ export default {
     },
   },
   data() {
+    const now = new Date()
     return {
+      currentDate: [now.getFullYear(), now.getMonth(), now.getDate()],
       yearVisible: false,
       today: [],
       year: 0,
@@ -86,7 +88,7 @@ export default {
   },
   watch: {
     value() {
-      this.init();
+      this.render();
     }
   },
   mounted() {
@@ -94,10 +96,9 @@ export default {
   },
   methods: {
     init() {
-      const now = new Date()
-      this.year = now.getFullYear()
-      this.month = now.getMonth()
-      this.day = now.getDate()
+      this.year = this.currentDate[0]
+      this.month = this.currentDate[1]
+      this.day = this.currentDate[2]
       if (this.value.length > 0) {
         if (this.range) {
           const [[year, month, day], [year2, month2, day2] = []] = this.value
@@ -122,7 +123,7 @@ export default {
       this.render(this.year, this.month)
     },
     // 渲染日期
-    render(y, m) {
+    render(y = this.year, m = this.month) {
       const firstDayOfMonth = new Date(y, m, 1).getDay() // 当月第一天星期
       const lastDateOfMonth = new Date(y, m + 1, 0).getDate() // 当月最后一天日期
       const lastDayOfLastMonth = new Date(y, m, 0).getDate() // 上月最后一天日期
@@ -163,7 +164,7 @@ export default {
               options.disabled = true
             }
           }
-          options.isToday = y === this.year && m === this.months && i === nowDay
+          options.isToday = y === this.currentDate[0] && m === this.currentDate[1] && i === this.currentDate[2]
           temp[line].push(options)
         } else if (this.multi) { // 多选形式
           let options
@@ -178,7 +179,7 @@ export default {
               }
             }
           }
-          options.isToday = y === this.year && m === this.month && i === nowDay
+          options.isToday = y === this.currentDate[0] && m === this.currentDate[1] && i === this.currentDate[2]
           temp[line].push(options)
         } else {  // 单选形式
           let now = new Date()
@@ -198,7 +199,7 @@ export default {
                 options.disabled = true
               }
             }
-            options.isToday = y === this.year && m === this.month && i === nowDay
+            options.isToday = y === this.currentDate[0] && m === this.currentDate[1] && i === this.currentDate[2]
             temp[line].push(options)
           }
         }
