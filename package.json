@@ -5,8 +5,8 @@
   "main": "lib/kuan-vue-calendar.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development kuan-pack dev",
-    "build": "cross-env NODE_ENV=production node build/build",
-    "build:lib": "cross-env NODE_ENV=production node build/buildLib",
+    "build": "rimraf docs && cross-env NODE_ENV=production node build/build",
+    "build:lib": "rimraf lib && cross-env NODE_ENV=production node build/buildLib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "cross-env": "^5.2.0",
     "kuan-pack-vue": "^2.0.7",
     "node-sass": "^4.11.0",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0"
   }
 }
