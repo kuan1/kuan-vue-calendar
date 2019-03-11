@@ -1,6 +1,6 @@
 {
   "name": "kuan-vue-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/kuan-vue-calendar.js",
   "scripts": {
