@@ -6,28 +6,28 @@
 
 (预览地址)[https://kuan1.github.io/kuan-vue-calendar/]
 
-### 使用DEMO
+### 使用 DEMO
+
 ```vue
 <template>
   <div class="test-container">
-    <h2 style="text-align: center">日历选择例子</h2>
-
+    <h2 class="sub-title">日历单选</h2>
     <calendar v-model="value" />
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value')">提交</button>
 
-    <hr>
+    <h2 class="sub-title">日历多选</h2>
     <calendar multi v-model="value2" />
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value2')">提交</button>
 
-    <hr>
+    <h2 class="sub-title">日历区间选择</h2>
     <calendar range v-model="value3" />
 
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value3')">提交</button>
   </div>
 </template>
 
 <script>
-import { Calendar } from '../src'
+import { Calendar } from 'kuan-vue-calendar'
 export default {
   components: {
     Calendar
@@ -40,30 +40,12 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(this.value)
-      console.log(this.value2)
-      console.log(this.value3)
+    alert(key) {
+      alert(JSON.stringify(this[key]))
     }
   }
 }
 </script>
-
-<style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-}
-.test-container {
-  width: 375px;
-  margin: 50px auto;
-}
-.btn {
-  padding: 4px 8px;
-  display: block;
-  margin: 10px auto;
-  font-size: 30px;
-}
-</style>
-
 ```
+
+## 修改日志

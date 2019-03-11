@@ -3,7 +3,7 @@
     <div class="calendar-header">
       <div @click="yearVisible = !yearVisible" class="header-wrap">
         <div @click.stop="prev" class="btn">＜</div>
-        <div>{{year}}-{{month}}</div>
+        <div class="calendar-title">{{year}}-{{month}}</div>
         <div @click.stop="next" class="btn">＞</div>
       </div>
     </div>
@@ -337,6 +337,7 @@ export default {
   width: 375px;
   max-width: 100%;
   position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .calendar-header {
   font-weight: bold;
@@ -344,6 +345,9 @@ export default {
   line-height: 50px;
   display: flex;
   justify-content: center;
+  .calendar-title {
+    cursor: pointer;
+  }
   .header-wrap {
     width: 80%;
     display: flex;
@@ -351,6 +355,7 @@ export default {
     justify-content: space-between;
   }
   .btn {
+    cursor: pointer;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -384,6 +389,9 @@ export default {
     height: 35px;
     text-align: center;
     line-height: 35px;
+    &:not(.disabled) {
+      cursor: pointer;
+    }
     &.gray {
       color: #999;
       font-weight: normal;

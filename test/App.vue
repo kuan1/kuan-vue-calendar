@@ -1,18 +1,17 @@
 <template>
   <div class="test-container">
-    <h2 style="text-align: center">日历选择例子</h2>
-
+    <h2 class="sub-title">日历单选</h2>
     <calendar v-model="value" />
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value')">提交</button>
 
-    <hr>
+    <h2 class="sub-title">日历多选</h2>
     <calendar multi v-model="value2" />
-    <button class="btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value2')">提交</button>
 
-    <hr>
+    <h2 class="sub-title">日历区间选择</h2>
     <calendar range v-model="value3" />
 
-    <button class="test-btn" @click="test">提交</button>
+    <button class="test-btn" @click="alert('value3')">提交</button>
   </div>
 </template>
 
@@ -30,10 +29,8 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(this.value)
-      console.log(this.value2)
-      console.log(this.value3)
+    alert(key) {
+      alert(JSON.stringify(this[key]))
     }
   }
 }
@@ -48,8 +45,13 @@ export default {
   width: 375px;
   margin: 50px auto;
 }
+.sub-title {
+  text-align: center;
+  line-height: 3;
+  margin-top: 25px;
+}
 .test-btn {
-  padding: 4px 8px;
+  padding: 6px 20px;
   display: block;
   margin: 10px auto;
   font-size: 30px;
