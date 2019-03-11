@@ -3,7 +3,7 @@
     <div class="calendar-header">
       <div @click="yearVisible = !yearVisible" class="header-wrap">
         <div @click.stop="prev" class="btn">＜</div>
-        <div class="calendar-title">{{year}}-{{month}}</div>
+        <div class="calendar-title">{{year}}-{{month + 1}}</div>
         <div @click.stop="next" class="btn">＞</div>
       </div>
     </div>
