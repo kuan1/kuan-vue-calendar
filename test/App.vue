@@ -17,15 +17,21 @@
 
 <script>
 import { Calendar } from '../src'
+
+const now = new Date()
+const y = now.getFullYear()
+const m = now.getMonth() + 1
+const d = now.getDate()
+
 export default {
   components: {
     Calendar
   },
   data() {
     return {
-      value: [], //  单选
-      value2: [[2019, 3, 10], [2019, 3, 11], [2019, 3, 15]], // 多选
-      value3: [[2019, 3, 10], [2019, 3, 20]] // [开始时间, 结束时间]
+      value: [y, m, d], //  单选
+      value2: [[y, m, 10], [y, m, 11], [y, m, 15]], // 多选
+      value3: [[y, m, 10], [y, m, 20]] // [开始时间, 结束时间]
     }
   },
   methods: {
