@@ -2,13 +2,13 @@
 
 目的：制作一个简单轻量的日历选择插件，支持单选、多选、区域选择
 
-(参考 vue-calendar)[https://github.com/jinzhe/vue-calendar]
+[参考 vue-calendar](https://github.com/jinzhe/vue-calendar)
 
-(预览地址)[https://kuan1.github.io/kuan-vue-calendar/]
+[预览地址](https://kuan1.github.io/kuan-vue-calendar/)
 
 ### 使用 DEMO
 
-```vue
+```html
 <template>
   <div class="test-container">
     <h2 class="sub-title">日历单选</h2>
@@ -27,29 +27,30 @@
 </template>
 
 <script>
-import { Calendar } from 'kuan-vue-calendar'
-export default {
-  components: {
-    Calendar
-  },
-  data() {
-    return {
-      value: [], //  单选
-      value2: [[2019, 3, 10], [2019, 3, 11], [2019, 3, 15]], // 多选
-      value3: [[2019, 3, 10], [2019, 3, 20]] // [开始时间, 结束时间]
-    }
-  },
-  methods: {
-    alert(key) {
-      alert(JSON.stringify(this[key]))
+  import { Calendar } from 'kuan-vue-calendar'
+  export default {
+    components: {
+      Calendar
+    },
+    data() {
+      return {
+        value: [], //  单选
+        value2: [[2019, 3, 10], [2019, 3, 11], [2019, 3, 15]], // 多选
+        value3: [[2019, 3, 10], [2019, 3, 20]] // [开始时间, 结束时间]
+      }
+    },
+    methods: {
+      alert(key) {
+        alert(JSON.stringify(this[key]))
+      }
     }
   }
-}
 </script>
 ```
 
 ## 修改日志
 
-- 1.0.0
-  样式修改  
-  bug 修改
+1.0.0
+
+- 样式修改
+- bug 修改
