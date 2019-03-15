@@ -127,7 +127,6 @@ export default {
       const firstDayOfMonth = new Date(y, m, 1).getDay() // 当月第一天星期
       const lastDateOfMonth = new Date(y, m + 1, 0).getDate() // 当月最后一天日期
       const lastDayOfLastMonth = new Date(y, m, 0).getDate() // 上月最后一天日期
-      const nowDay = new Date().getDate()
       this.year = y
       const seletSplit = this.value
       let i, line = 0, temp = [], nextMonthPushDays = 1
