@@ -108,7 +108,7 @@ export default {
           this.rangeBegin = [year, month - 1, day]
           this.rangeEnd = [year2, month2 - 1, day2]
         } else if (this.multi) {
-          const [[year, month, day], [year2, month2, day2] = []] = this.value
+          const [[year, month, day]] = this.value
           this.multiDays = this.value
           this.year = year
           this.month = month - 1
