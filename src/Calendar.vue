@@ -221,7 +221,7 @@ export default {
           temp[i] = []
           let start = nextMonthPushDays + (i - line - 1) * 7
           for (let d = start; d <= start + 6; d++) {
-            temp[line].push({ day: d, gray: true })
+            temp[i].push({ day: d, gray: true })
           }
         }
       }
