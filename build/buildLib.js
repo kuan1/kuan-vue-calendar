@@ -1,7 +1,10 @@
-const path = require('path')
-const { buildLib } = require('kuan-pack-vue')
+const { buildLib: build } = require('kuan-pack')
 
-buildLib({
-  entry: path.resolve(__dirname, '../src'),
-  distPath: path.resolve(__dirname, '../lib')
+const { resolve } = require('./utils')
+
+build({
+  extend(config) {
+    config.output.path = resolve('lib')
+    config.entry = resolve('src')
+  }
 })

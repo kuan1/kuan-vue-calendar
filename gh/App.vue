@@ -1,17 +1,7 @@
 <template>
   <div class="test-container">
     <h2 class="sub-title">日历单选</h2>
-    <calendar v-model="value" />
-    <button class="test-btn" @click="alert('value')">提交</button>
-
-    <h2 class="sub-title">日历多选</h2>
-    <calendar multi v-model="value2" />
-    <button class="test-btn" @click="alert('value2')">提交</button>
-
-    <h2 class="sub-title">日历区间选择</h2>
-    <calendar range v-model="value3" />
-
-    <button class="test-btn" @click="alert('value3')">提交</button>
+    <calendar v-model="value"/>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
-const path = require('path')
+const { resolve } = require('./build/utils.js')
+
+const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  entry: path.resolve(__dirname, 'test'),
-  distPath: path.resolve(__dirname, 'docs')
+  entry: resolve('gh'),
+  publicPath: isDev ? '' : '/kuan-vue-calendar/'
 }
