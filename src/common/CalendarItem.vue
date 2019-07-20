@@ -1,4 +1,8 @@
-<template></template>
+<template>
+  <div class="calendar-item">
+    <div v-for="item in days" :key="`${item.month}${item.day}`" class="day">{{item.day}}</div>
+  </div>
+</template>
 
 <script>
 import { getMonthDays } from '../utils/calendar.js'
@@ -27,5 +31,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.calendar-item {
+  width: 420px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

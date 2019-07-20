@@ -10,6 +10,7 @@ function getCurrentDays({ year, month }) {
   const currentDays = []
   for (let i = 1; i <= lastDay; i++) {
     currentDays.push({
+      month,
       day: i
     })
   }
@@ -24,8 +25,10 @@ function getPreDays({ year, month }) {
   const firstDay = new Date(year, month - 1, 1).getDate()
   const preLastDay = new Date(year, month - 1, 0).getDate()
   if (firstDay === 7) return []
+  const m = month > 2 ? month - 1 : 12
   for (let i = 0; i < firstDay; i++) {
     preDays.unshift({
+      month: m,
       day: preLastDay - i,
       isPre: true
     })
@@ -36,11 +39,14 @@ function getPreDays({ year, month }) {
 /**
  * @description: 获取当月显示的下月天数(一共显示6行即42天)
  */
-function getNextDays(daysLength) {
+function getNextDays(daysLength, month) {
   const nextDays = []
   const fillLength = 42 - daysLength
+  const m = month === 12 ? 0 : month + 1
+
   for (let i = 1; i <= fillLength; i++) {
     nextDays.push({
+      month: m,
       day: i,
       isNext: true
     })
@@ -60,9 +66,14 @@ export function getMonthDays(opt) {
       month: now.getMonth() + 1
     }
   }
-  // 上月天数
+  // 当月月天数
   const currentDays = getCurrentDays(options)
+  // 上月显示天数
   const preDays = getPreDays(options)
-  const nextDays = getNextDays(currentDays.length + preDays.length)
+  // 下月显示天数
+  const nextDays = getNextDays(
+    currentDays.length + preDays.length,
+    options.month
+  )
   return [...preDays, ...currentDays, ...nextDays]
 }
