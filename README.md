@@ -33,10 +33,12 @@ npm i kuan-vue-calendar -S
 </template>
 
 <script>
-  import { Calendar } from 'kuan-vue-calendar'
+  import { Calendar, CalendarItem } from 'kuan-vue-calendar'
+
   export default {
     components: {
-      Calendar
+      Calendar,
+      CalendarItem
     },
     data() {
       return {
