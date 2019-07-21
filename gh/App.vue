@@ -9,11 +9,14 @@
     <h2 class="sub-title">日历区间</h2>
     <calendar v-model="value3" mode="range"/>
     <button @click="alert('value3')" class="test-btn">确定</button>
+    <h2 class="sub-title">日历Picker</h2>
+    <calendar-picker v-model="value3" mode="range"/>
+    <button @click="alert('value3')" class="test-btn">确定</button>
   </div>
 </template>
 
 <script>
-import { Calendar } from '../src'
+import { Calendar, CalendarPicker } from '../src'
 import { fixZero } from '../src/utils/index.js'
 
 const now = new Date()
@@ -23,7 +26,8 @@ const d = now.getDate()
 
 export default {
   components: {
-    Calendar
+    Calendar,
+    CalendarPicker
   },
   data() {
     return {
@@ -51,6 +55,7 @@ $main-color: #3f8de2;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 200px;
 }
 .sub-title {
   text-align: center;
@@ -66,7 +71,6 @@ $main-color: #3f8de2;
   height: 30px;
   outline: 0;
   overflow: hidden;
-  position: relative;
   text-align: center;
   padding: 0 20px;
   margin: 5px;

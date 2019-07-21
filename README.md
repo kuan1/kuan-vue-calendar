@@ -56,6 +56,7 @@ npm i kuan-vue-calendar -S
 2.0.0
 
 - 日历重写、使用方法发生改变
+- 添加日历 picker
 - bug 修复
 
   1.0.0

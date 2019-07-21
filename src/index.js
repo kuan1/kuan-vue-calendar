@@ -1,8 +1,9 @@
-import CalendarItem from './common/CalendarItem.vue'
 import Calendar from './common/Calendar'
+import CalendarPicker from './common/CalendarPicker.vue'
 
 const install = Vue => {
-  Vue.component('Calendar', Calendar)
+  Vue.component('calendar', Calendar)
+  Vue.component('calendar-picker', CalendarPicker)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -13,4 +14,4 @@ export default {
   install
 }
 
-export { Calendar, CalendarItem }
+export { Calendar, CalendarPicker }

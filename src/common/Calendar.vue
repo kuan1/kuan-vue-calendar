@@ -122,6 +122,7 @@ $main-color: #3f8de2;
   max-width: 100%;
   border-radius: 4px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+  background: white;
 }
 .calendar-header {
   display: flex;
