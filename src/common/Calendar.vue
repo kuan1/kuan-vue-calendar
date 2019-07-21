@@ -2,12 +2,13 @@
   <div class="kuan-calendar">
     <div class="calendar-header">
       <i @click="renderPreYear" class="iconfont icon-doubleleft"></i>
-      <i class="iconfont icon-left"></i>
-      <div class="current-date">{{year}}-{{month}}</div>
-      <i class="iconfont icon-right"></i>
-      <i class="iconfont icon-doubleright"></i>
+      <i @click="renderPreMonth" class="iconfont icon-left"></i>
+      <div class="current-date">{{y}}-{{m}}</div>
+      <i @click="renderNextMonth" class="iconfont icon-right"></i>
+      <i @click="renderNextYear" class="iconfont icon-doubleright"></i>
     </div>
     <calendar-item :mode="mode" :value="valueArr" @click="select" :year="y" :month="m"></calendar-item>
+    <div @click="renderToday" class="footer">今天</div>
   </div>
 </template>
 
@@ -84,15 +85,40 @@ export default {
       }
     },
     renderPreYear() {
-
+      this.y -= 1
+    },
+    renderNextYear() {
+      this.y += 1
+    },
+    renderPreMonth() {
+      if (this.m === 1) {
+        this.y = this.y - 1
+        this.m = 12
+      } else {
+        this.m -= 1
+      }
+    },
+    renderNextMonth() {
+      if (this.m === 12) {
+        this.y = this.y + 1
+        this.m = 1
+      } else {
+        this.m += 1
+      }
+    },
+    renderToday() {
+      this.y = nowYear
+      this.m = nowMonth
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+$main-color: #3f8de2;
+
 .kuan-calendar {
-  width: 210px;
+  width: 230px;
   max-width: 100%;
   border-radius: 4px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
@@ -114,5 +140,14 @@ export default {
     cursor: pointer;
     padding: 10px 5px 8px;
   }
+}
+.footer {
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  color: #3f8de2;
+  cursor: pointer;
 }
 </style>

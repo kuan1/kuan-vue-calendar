@@ -51,7 +51,8 @@ function getCurrentDays({ year, month }) {
  */
 function getPreDays({ year, month }) {
   const preDays = []
-  const firstDay = new Date(year, month - 1, 1).getDate()
+  // 当月第一天是星期几
+  const firstDay = new Date(year, month - 1, 1).getDay()
   const preLastDay = new Date(year, month - 1, 0).getDate()
   if (firstDay === 7) return []
   const m = month > 2 ? month - 1 : 12

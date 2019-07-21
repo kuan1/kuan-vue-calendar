@@ -90,16 +90,16 @@ $main-color: #3f8de2;
   padding: 5px;
 }
 .day {
-  width: 18px;
-  height: 20px;
-  line-height: 20px;
+  width: 22px;
+  height: 24px;
+  line-height: 24px;
   border-radius: 2px;
   box-sizing: border-box;
 }
 .day-item {
   width: 14.2857%;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   height: 28px;
   color: #333;
   line-height: 1;
@@ -112,7 +112,7 @@ $main-color: #3f8de2;
   cursor: pointer;
   &.prev,
   &.next {
-    color: #999;
+    color: #ccc;
     font-weight: normal;
     cursor: default;
   }
