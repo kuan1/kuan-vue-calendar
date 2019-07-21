@@ -3,11 +3,9 @@
     <h2 class="sub-title">日历单选</h2>
     <calendar v-model="value"/>
     <button @click="alert('value')" class="test-btn">确定</button>
-    <hr>
     <h2 class="sub-title">日历多选</h2>
     <calendar v-model="value2" mode="multiple"/>
     <button @click="alert('value2')" class="test-btn">确定</button>
-    <hr>
     <h2 class="sub-title">日历区间</h2>
     <calendar v-model="value3" mode="range"/>
     <button @click="alert('value3')" class="test-btn">确定</button>
@@ -53,9 +51,6 @@ $main-color: #3f8de2;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-hr {
-  width: 100%;
 }
 .sub-title {
   text-align: center;

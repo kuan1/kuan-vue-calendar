@@ -14,7 +14,7 @@
 <script>
 import CalendarItem from './CalendarItem.vue'
 
-import { nowYear, nowMonth } from '../utils/calendar.js'
+import { nowYear, nowMonth, toDate } from '../utils/calendar.js'
 
 export default {
   components: {
@@ -47,12 +47,12 @@ export default {
   },
   methods: {
     select(e) {
+      let value = [...this.value]
       switch (this.mode) {
         case 'single':
           this.$emit('input', e)
           break
         case 'multiple':
-          const value = [...this.value]
           if (value.includes(e)) {
             this.$emit('input', value.filter(item => item !== e))
           } else {
@@ -61,6 +61,17 @@ export default {
           }
           break
         case 'range':
+          if (value.length === 1) {
+            const [select] = value
+            if (toDate(select) > toDate(e)) {
+              value.unshift(e)
+            } else {
+              value.push(e)
+            }
+          } else {
+            value = [e]
+          }
+          this.$emit('input', value)
           break
         default:
           console.error('mode类型错误')

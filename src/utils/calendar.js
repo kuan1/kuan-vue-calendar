@@ -11,6 +11,14 @@ export const nowMonth = now.getMonth() + 1
 export const nowDay = now.getDate()
 
 /**
+ * @description: 获取当前时间 Date
+ * @return: Date
+ */
+export function toDate(str = '') {
+  return new Date(str.replace(/-/g, '/'))
+}
+
+/**
  * 处理当前时间
  */
 function getItemDay(options) {

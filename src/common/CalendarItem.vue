@@ -3,7 +3,7 @@
     <div
       v-for="item in days"
       :key="`${item.month}${item.day}`"
-      :class="{prev: item.isPre, next: item.isNext, today: item.isNow, active: value.includes(`${item.year}-${fixZero(item.month)}-${fixZero(item.day)}`)}"
+      :class="{prev: item.isPre, next: item.isNext, today: item.isNow, active: isActive(item)}"
       class="day-item"
       @click="itemClick(item)"
     >
@@ -13,11 +13,17 @@
 </template>
 
 <script>
-import { getMonthDays, nowYear, nowMonth } from '../utils/calendar.js'
+import { getMonthDays, nowYear, nowMonth, toDate } from '../utils/calendar.js'
 import { fixZero, debounce } from '../utils/index.js'
 
 export default {
   props: {
+    mode: {
+      validator(value) {
+        return ['single', 'multiple', 'range'].includes(value)
+      },
+      default: 'single'
+    },
     year: {
       type: Number,
       default: nowYear
@@ -56,6 +62,19 @@ export default {
     itemClick(item) {
       if (item.isPre || item.isNext) return
       this.$emit('click', `${item.year}-${fixZero(item.month)}-${fixZero(item.day)}`)
+    },
+    isActive(item) {
+      const { value } = this
+      if (['single', 'multiple'].includes(this.mode)) {
+        return value.includes(`${item.year}-${fixZero(item.month)}-${fixZero(item.day)}`)
+      }
+      if (this.mode === 'range') {
+        if (!value.length) return false
+        let [preSelect, nextSelect] = value
+        if (!nextSelect) nextSelect = preSelect
+        const itemDate = new Date(item.year, item.month - 1, item.day)
+        return itemDate >= toDate(preSelect) && itemDate <= toDate(nextSelect)
+      }
     }
   }
 }
