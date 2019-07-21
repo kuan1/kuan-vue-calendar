@@ -110,6 +110,13 @@ $main-color: #3f8de2;
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
+  &:active {
+    .day {
+      background: $main-color;
+      color: white;
+      opacity: 0.5;
+    }
+  }
   &.prev,
   &.next {
     color: #ccc;

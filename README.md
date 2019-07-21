@@ -1,6 +1,6 @@
 # kuan-vue-calendar
 
-一个小巧轻量的 vue 日历组件，支持单选、多选、区域选择
+一个小巧轻量的 vue 日历组件和 picker，支持单选、多选、区域选择
 
 [预览地址](https://kuan1.github.io/kuan-vue-calendar/)
 
@@ -25,6 +25,9 @@ npm i kuan-vue-calendar -S
     <button @click="alert('value2')" class="test-btn">确定</button>
     <h2 class="sub-title">日历区间</h2>
     <calendar v-model="value3" mode="range" />
+    <button @click="alert('value3')" class="test-btn">确定</button>
+    <h2 class="sub-title">日历picker</h2>
+    <calendar-picker v-model="value3" mode="range" />
     <button @click="alert('value3')" class="test-btn">确定</button>
   </div>
 </template>

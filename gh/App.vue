@@ -1,5 +1,8 @@
 <template>
   <div class="test-container">
+    <div class="link">
+      <a href="https://www.npmjs.com/package/kuan-vue-calendar">npm地址：kuan-vue-calendar</a>
+    </div>
     <h2 class="sub-title">日历单选</h2>
     <calendar v-model="value"/>
     <button @click="alert('value')" class="test-btn">确定</button>
@@ -56,6 +59,12 @@ $main-color: #3f8de2;
   align-items: center;
   flex-direction: column;
   padding-bottom: 200px;
+}
+.link {
+  font-size: 12px;
+  a {
+    color: $main-color;
+  }
 }
 .sub-title {
   text-align: center;
