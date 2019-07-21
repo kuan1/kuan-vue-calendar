@@ -101,7 +101,7 @@ $main-color: #3f8de2;
   text-align: center;
   font-size: 14px;
   height: 28px;
-  color: #333;
+  color: #555;
   line-height: 1;
   padding: 2px 0;
   display: flex;
@@ -110,11 +110,9 @@ $main-color: #3f8de2;
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
-  &:active {
+  &:hover {
     .day {
-      background: $main-color;
-      color: white;
-      opacity: 0.5;
+      background: #eef4fc;
     }
   }
   &.prev,
