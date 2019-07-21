@@ -1,3 +1,4 @@
+import CalendarItem from './common/CalendarItem.vue'
 import Calendar from './common/Calendar'
 
 const install = Vue => {
@@ -12,4 +13,4 @@ export default {
   install
 }
 
-export { Calendar }
+export { Calendar, CalendarItem }

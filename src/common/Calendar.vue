@@ -1,13 +1,13 @@
 <template>
   <div class="kuan-calendar">
     <div class="calendar-header">
-      <i class="iconfont icon-doubleleft"></i>
+      <i @click="renderPreYear" class="iconfont icon-doubleleft"></i>
       <i class="iconfont icon-left"></i>
       <div class="current-date">{{year}}-{{month}}</div>
       <i class="iconfont icon-right"></i>
       <i class="iconfont icon-doubleright"></i>
     </div>
-    <calendar-item :mode="mode" :value="valueArr" @click="select" :year="year" :month="month"></calendar-item>
+    <calendar-item :mode="mode" :value="valueArr" @click="select" :year="y" :month="m"></calendar-item>
   </div>
 </template>
 
@@ -38,6 +38,12 @@ export default {
     month: {
       type: Number,
       default: nowMonth
+    }
+  },
+  data() {
+    return {
+      y: this.year,
+      m: this.month
     }
   },
   computed: {
@@ -76,6 +82,9 @@ export default {
         default:
           console.error('mode类型错误')
       }
+    },
+    renderPreYear() {
+
     }
   }
 }

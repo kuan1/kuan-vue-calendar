@@ -1,6 +1,6 @@
 {
   "name": "kuan-vue-calendar",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "",
   "main": "lib/kuan-vue-calendar.js",
   "scripts": {
@@ -18,7 +18,11 @@
     "src"
   ],
   "keywords": [
-    "calendar"
+    "kuan-vue-calendar",
+    "calendar",
+    "vue",
+    "vue-calendar",
+    "luzhongk"
   ],
   "author": "luzhongk@126.com",
   "license": "ISC",
