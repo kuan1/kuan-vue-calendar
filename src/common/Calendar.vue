@@ -1,18 +1,98 @@
 <template>
   <div class="kuan-calendar">
-    <calendar-item></calendar-item>
+    <div class="calendar-header">
+      <i class="iconfont icon-doubleleft"></i>
+      <i class="iconfont icon-left"></i>
+      <div class="current-date">{{year}}-{{month}}</div>
+      <i class="iconfont icon-right"></i>
+      <i class="iconfont icon-doubleright"></i>
+    </div>
+    <calendar-item :mode="mode" :value="valueArr" @click="select" :year="year" :month="month"></calendar-item>
   </div>
 </template>
 
 <script>
 import CalendarItem from './CalendarItem.vue'
 
+import { nowYear, nowMonth } from '../utils/calendar.js'
+
 export default {
   components: {
     CalendarItem
+  },
+  props: {
+    mode: {
+      validator(value) {
+        return ['single', 'multiple', 'range'].includes(value)
+      },
+      default: 'single'
+    },
+    value: {
+      type: [Array, String],
+      default: ''
+    },
+    year: {
+      type: Number,
+      default: nowYear
+    },
+    month: {
+      type: Number,
+      default: nowMonth
+    }
+  },
+  computed: {
+    valueArr() {
+      return this.mode === 'single' ? [this.value] : this.value
+    }
+  },
+  methods: {
+    select(e) {
+      switch (this.mode) {
+        case 'single':
+          this.$emit('input', e)
+          break
+        case 'multiple':
+          const value = [...this.value]
+          if (value.includes(e)) {
+            this.$emit('input', value.filter(item => item !== e))
+          } else {
+            value.push(e)
+            this.$emit('input', value)
+          }
+          break
+        case 'range':
+          break
+        default:
+          console.error('mode类型错误')
+      }
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.kuan-calendar {
+  width: 210px;
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+  .current-date {
+    flex: 1;
+    text-align: center;
+  }
+  .iconfont {
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    padding: 10px 5px 8px;
+  }
+}
 </style>

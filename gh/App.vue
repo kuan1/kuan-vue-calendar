@@ -2,11 +2,21 @@
   <div class="test-container">
     <h2 class="sub-title">日历单选</h2>
     <calendar v-model="value"/>
+    <button @click="alert('value')" class="test-btn">确定</button>
+    <hr>
+    <h2 class="sub-title">日历多选</h2>
+    <calendar v-model="value2" mode="multiple"/>
+    <button @click="alert('value2')" class="test-btn">确定</button>
+    <hr>
+    <h2 class="sub-title">日历区间</h2>
+    <calendar v-model="value3" mode="range"/>
+    <button @click="alert('value3')" class="test-btn">确定</button>
   </div>
 </template>
 
 <script>
 import { Calendar } from '../src'
+import { fixZero } from '../src/utils/index.js'
 
 const now = new Date()
 const y = now.getFullYear()
@@ -19,9 +29,9 @@ export default {
   },
   data() {
     return {
-      value: [y, m, d], //  单选
-      value2: [[y, m, 10], [y, m, 11], [y, m, 15]], // 多选
-      value3: [[y, m, 10], [y, m, 20]] // [开始时间, 结束时间]
+      value: `${y}-${fixZero(m)}-${fixZero(d)}`, //  单选 2019-07-21
+      value2: [`${y}-${fixZero(m)}-09`, `${y}-${fixZero(m)}-20`], // 多选 [2019-07-09, 2019-07-20]
+      value3: [`${y}-${fixZero(m)}-09`, `${y}-${fixZero(m)}-20`] // 区间 [2019-07-09, 2019-07-20]
     }
   },
   methods: {
@@ -33,13 +43,19 @@ export default {
 </script>
 
 <style lang="scss">
+$main-color: #3f8de2;
+
 * {
   margin: 0;
   padding: 0;
 }
 .test-container {
-  width: 375px;
-  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+hr {
+  width: 100%;
 }
 .sub-title {
   text-align: center;
@@ -47,9 +63,25 @@ export default {
   margin-top: 25px;
 }
 .test-btn {
-  padding: 6px 20px;
-  display: block;
-  margin: 10px auto;
-  font-size: 30px;
+  appearance: none;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 30px;
+  outline: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  margin: 5px;
+  border: 1px solid $main-color;
+  cursor: pointer;
+  color: #fff;
+  margin: 20px;
+  background-color: $main-color;
+  &:active {
+    opacity: 0.9;
+  }
 }
 </style>
