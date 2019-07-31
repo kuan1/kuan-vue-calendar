@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1230434_v968elyade.eot?t=1563689031913'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1230434_v968elyade.eot?t=1563689031913#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMsAAsAAAAAB/AAAALfAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDGgqDHIJcATYCJAMUCwwABCAFhG0HURvZBsiemjwhxPKAx4KFSqBA+Cwevt+Pde6Tj0qDJBrpXs2nk0iEBFE8FhKheUiyG/LO/t9a++fz9jBLvMHsLGHiO7J757NzQtTQNBQymUqGRLYmmohwAdgAAX+TD46ZLoWib21zygqq0NF0YNP6qKYn+xd6Qf5h7CbKg3icQLtRjUyrg+PzgBTguECc6nwHUCqkKFq2VWhKLi3iAWxa06X5Frjnvx9/+UIkNQOnbp4MEOj+/nj5tqStUwSIx3saVGTMAYU4LnXtsoSpORbtTspqCqxrv+D7O53m+4OKVvsPj5BkhWiAyk6wKKYL3x+YR/D9ySPx/WWUT1QsSl7GUypoR4Mz4EnCjrWEkKQBsI/Bzk4AzgspYbucFvPz/WT7ZwVJQZ719Nxkuihico4KzhTlqmDZXWHl1Om8Pi9aM4zGqqI8GUdo6YvXxCmqu+vfxc2W77BOoHleAvPm0YTt0Gdlr0vh/jIav64thJyh2YrmdN7A/4BWpBHFQIfFzRXVs0VeKHg0jmpnqEVlbkgBh+T29A/SK8fldfMzcu0vTAhefl5etrLbf5GzgK/VsiHBVPRLt0q0Fv8eccuR4kqBuRa7HYtsTzUxwrEJ7drxH/D1exxHM9S6ktBqKIakxQhkrcaQBTsHVYd5aLRagHazhq7uMECwiNKGGccChF5XkHR7hqzXHbJgH6Aa9gWN3izQbj/yb9lhIl3pE3RHUoJ397CuRsIMWaUSVM9SHg/uiKSUkxepMPQo9ro82ewQDVMxxhlGgvukZJiJSAgPCk+jwWAER0XET1Xp0qSMtrrdrOybXGokBIoVArVDoghs1x5Mp4oIY3S+pOR+fhbFxQXtEDUdHf5FlGDQl8e8XDwtkEOqcKuOa/mKIYHzkSQGY4SIEGxQOIgKCorAouUH+VEqyUXrkYhq5YaTWFuVa35N6AEKtR7AO2ukyFGiRqOe6VyT1iBlUiGR+G6QRhinqNwIAAA=')
+      format('woff2'),
+    url('//at.alicdn.com/t/font_1230434_v968elyade.woff?t=1563689031913')
+      format('woff'),
+    url('//at.alicdn.com/t/font_1230434_v968elyade.ttf?t=1563689031913')
+      format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url('//at.alicdn.com/t/font_1230434_v968elyade.svg?t=1563689031913#iconfont')
+      format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right:before {
+  content: '\e7eb';
+}
+
+.icon-left:before {
+  content: '\e7ec';
+}
+
+.icon-doubleleft:before {
+  content: '\e7ed';
+}
+
+.icon-doubleright:before {
+  content: '\e7ee';
+}

@@ -117,6 +117,8 @@ export default {
 <style lang="scss" scoped>
 $main-color: #3f8de2;
 
+@import './iconfont.scss';
+
 .kuan-calendar {
   width: 230px;
   max-width: 100%;
