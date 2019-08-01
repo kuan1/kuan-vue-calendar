@@ -58,7 +58,11 @@ npm i kuan-vue-calendar -S
 
 ## 修改日志
 
-2.0.0
+2.0.2
+
+- 显示星期（日历必有的功能，感谢这里的提醒[issues/3](https://github.com/kuan1/kuan-vue-calendar/issues/3)）
+
+  2.0.0
 
 - 日历重写、使用方法发生改变
 - 添加日历 picker

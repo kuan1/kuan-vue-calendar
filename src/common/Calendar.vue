@@ -7,6 +7,9 @@
       <i @click="renderNextMonth" class="iconfont icon-right"></i>
       <i @click="renderNextYear" class="iconfont icon-doubleright"></i>
     </div>
+    <div class="weeks">
+      <div v-for="week in weeks" :key="week" class="week">{{week}}</div>
+    </div>
     <calendar-item :mode="mode" :value="valueArr" @click="select" :year="y" :month="m"></calendar-item>
     <div @click="renderToday" class="footer">今天</div>
   </div>
@@ -44,7 +47,10 @@ export default {
   data() {
     return {
       y: this.year,
-      m: this.month
+      m: this.month,
+      weeks: [
+        '日', '一', '二', '三', '四', '五', '六'
+      ]
     }
   },
   computed: {
@@ -142,6 +148,17 @@ $main-color: #3f8de2;
     color: #666;
     cursor: pointer;
     padding: 10px 5px 8px;
+  }
+}
+.weeks {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  color: #666;
+  padding: 5px 0;
+  .week {
+    flex: 1;
+    text-align: center;
   }
 }
 .footer {
