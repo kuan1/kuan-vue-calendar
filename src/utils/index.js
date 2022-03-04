@@ -12,5 +12,5 @@ export function debounce(fn, time = 30) {
 
 // 补0
 export function fixZero(num = 0) {
-  return num >= 9 ? num : `0${num}`
+  return num > 9 ? num : `0${num}`
 }
